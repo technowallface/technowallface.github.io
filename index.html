@@ -1,33 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>???</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background-color: #f9f9f9;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-    }
-    img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 12px;
-      box-shadow: 0px 8px 24px 0px rgba(0, 0, 0, 0.15);
-      border: 1px solid #ccc;
-    }
-  </style>
-</head>
-<body>
-  <!-- https://github.com/technowallface/technowallface.github.io -->
-  <img src="./image.png" alt="Oyasumi" title="Oyasumi"/>
-  <!-- work smart not hard -->
-  <!-- ..-. .-.-.- / .-- .- .-.. .-.. ..-. .- -.-. . .-. / .--. .-. --- .--- . -.-. - / -....- / ... .- ..- .-. .. -.. .- --..-- / .-. . -... ..- .-. ... --- --..-- / .- -.. -.. -. .- -.	
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>???</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      html {
+        height: 100vh;
+        font-family: "JetBrains Mono", sans-serif;
+        font-size: 16px;
+        color: #333;
+        background-color: #f9f9f9;
+      }
+      .hindi-mo-ba-ako-lilisanin {
+        font-size: 32px;
+        font-weight: 700;
+        text-align: center;
+        margin: 0;
+        padding: 16px;
+        color: #efefef;
+      }
+      body {
+        margin: 0;
+        background-color: #f9f9f9;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        height: 100%;
+      }
+      img {
+        width: 100%;
+        border-radius: 12px;
+        box-shadow: 0px 8px 24px 0px rgba(0, 0, 0, 0.15);
+        border: 1px solid #ccc;
+      }
+      .naalala-mo-pa-ba {
+        padding: 0;
+        background-image: url("./advice.svg");
+        width: 100px;
+        height: 100px;
+        background-repeat: no-repeat;
+        background-size: 100px 100px;
+        box-shadow: 0px 8px 24px 0px rgba(0, 0, 0, 0.15);
+        border-radius: 9999px;
+        border: 1px solid #ccc;
+        transition: 0.3s ease;
+        z-index: 1;
+      }
+      .naalala-mo-pa-ba:hover {
+        filter: brightness(0.9);
+        cursor: pointer;
+      }
+      .naalala-mo-pa-ba:hover:active {
+        filter: brightness(0.7);
+        transform: scale(0.95);
+      }
+      .nakita-kita {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .lapit-lapit-ka {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+        height: 100%;
+        padding: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- https://github.com/technowallface/technowallface.github.io -->
+    <div class="lapit-lapit-ka">
+      <h1 class="hindi-mo-ba-ako-lilisanin">// DO NOT PANIC</h1>
+      <a href="./image.png">
+        <img src="./image.png" alt="Oyasumi" title="Oyasumi" />
+      </a>
+      <!-- work smart not hard -->
+      <!-- ..-. .-.-.- / .-- .- .-.. .-.. ..-. .- -.-. . .-. / .--. .-. --- .--- . -.-. - / -....- / ... .- ..- .-. .. -.. .- --..-- / .-. . -... ..- .-. ... --- --..-- / .- -.. -.. -. .- -.	
 机制/指南：
 ... .. -. -.-. . / - .... .. ... / .-- .. .-.. .-.. / -... . / .- / ... . -.-. .-. . - / . ...- . -. - --..-- / - .... . .-. . / .-- .. .-.. .-.. / -... . / .- / -... .- .-. . / -- .. -. .. -- ..- -- / --- ..-. / .-.. .. -- .. - ... / ... . - / ..- .--. --- -. / - .... . / ... - ..- -.. . -. - ... / .-- .... --- / .-- .. .-.. .-.. / .--. .- .-. - .- -.- . / .. -. / - .... .. ... / . ...- . -. - .-.-.- / .... --- .-- . ...- . .-. --..-- / - .... . .-. . / .-- .. .-.. .-.. / ... - .. .-.. .-.. / -... . / .- / ... . - / --- ..-. / --. .-. --- ..- -. -.. / .-. ..- .-.. . ... .-.-.-
 
@@ -40,5 +101,32 @@
 
 // tell him i said "hi."
 -->
-</body>
+      <div class="nakita-kita">
+        <button class="naalala-mo-pa-ba" id="one"></button>
+        <button class="naalala-mo-pa-ba" id="two"></button>
+        <button class="naalala-mo-pa-ba" id="three"></button>
+        <button class="naalala-mo-pa-ba" id="four"></button>
+        <button class="naalala-mo-pa-ba" id="five"></button>
+      </div>
+    </div>
+    <script>
+      // sneaky breeky
+      // pm no. 2 the entirety of Multo
+      document.getElementById("one").onclick = function () {
+        window.open("https://drive.google.com/file/d/1qd-V3Ub-rXe08tVzFqLP6tqP0efUeiOd/view?usp=sharing");
+      };
+      document.getElementById("two").onclick = function () {
+        window.open("https://www.youtube.com/watch?v=GMgsFZ4rkEI");
+      };
+      document.getElementById("three").onclick = function () {
+        window.open("https://technowallface.pages.dev/");
+      };
+      document.getElementById("four").onclick = function () {
+        window.open("https://technowallface.vercel.app/");
+      };
+      document.getElementById("five").onclick = function () {
+        window.open("https://dsbure.github.io/gany-seatplan/");
+      };
+    </script>
+  </body>
 </html>
