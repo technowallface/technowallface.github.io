@@ -12,6 +12,14 @@
     />
 
     <style>
+      * {
+        transition: 0.2s;
+      }
+      @media (prefers-reduced-motion) {
+        * {
+          transition: 0;
+        }
+      }
       html {
         height: 100vh;
         font-family: "JetBrains Mono", sans-serif;
@@ -35,6 +43,37 @@
         justify-content: center;
         overflow: hidden;
         height: 100%;
+      }
+      #wlang-kakulangan {
+        font-weight: 700;
+        color: #333;
+        text-align: end;
+        margin-left: 16px;
+        writing-mode: vertical-rl;
+        /* screw you */
+        user-select: none;
+        cursor: pointer;
+        transform-origin: center center;
+      }
+      pre {
+        text-orientation: mixed;
+      }
+      @media (max-width: 768px) {
+        #wlang-kakulangan {
+          position: absolute;
+          background-color: #f9f9f9;
+          border: 1px solid #ccc;
+          font-size: 4vw;
+          text-align: center;
+          border-radius: 12px;
+          box-shadow: 0px 8px 24px 0px rgba(0, 0, 0, 0.15);
+          margin: 0;
+          writing-mode: horizontal-tb;
+          pre {
+            margin: 0;
+            padding: 16px;
+          }
+        }
       }
       img {
         width: 100%;
@@ -82,6 +121,12 @@
   </head>
   <body>
     <!-- https://github.com/technowallface/technowallface.github.io -->
+    <div id="wlang-kakulangan">
+      <pre>sapat na sa 'kin ang ganito, oh-oh
+ang pagmasdan ka sa malayo
+kapag kinausap, walang masagot
+hininga'y lagot.</pre>
+    </div>
     <div class="lapit-lapit-ka">
       <h1 class="hindi-mo-ba-ako-lilisanin">// DO NOT PANIC</h1>
       <a href="./image.png">
@@ -113,7 +158,9 @@
       // sneaky breeky
       // pm no. 2 the entirety of Multo
       document.getElementById("one").onclick = function () {
-        window.open("https://drive.google.com/file/d/1qd-V3Ub-rXe08tVzFqLP6tqP0efUeiOd/view?usp=sharing");
+        window.open(
+          "https://drive.google.com/file/d/1qd-V3Ub-rXe08tVzFqLP6tqP0efUeiOd/view?usp=sharing"
+        );
       };
       document.getElementById("two").onclick = function () {
         window.open("https://www.youtube.com/watch?v=GMgsFZ4rkEI");
@@ -127,6 +174,20 @@
       document.getElementById("five").onclick = function () {
         window.open("https://dsbure.github.io/gany-seatplan/");
       };
+
+      const z = document.getElementById("wlang-kakulangan");
+      z.onclick = function () {
+        z.style["opacity"] = 0;
+        z.style["transform"] = "scaleX(0)";
+        if (window.innerWidth >= 768) {
+          z.style["margin-right"] = "-" + (z.offsetWidth + 16) + "px";
+        }
+        // xofsmr
+        console.log("to be continued...");
+        setInterval(() => {
+          z.style["display"] = "none";
+        }, 300)
+      }
     </script>
   </body>
 </html>
